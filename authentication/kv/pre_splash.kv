@@ -1,0 +1,46 @@
+
+
+<PreSplashScreen>:
+    id: pre_splash
+    name: "pre_splash"
+    MDLabel:
+        text: 'pre splash'
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_color
+        Image:
+            source:"assets\img\geetechlab.png"
+            size_hint: .30, .30
+            pos_hint: {"center_x": .5, "center_y": .55}
+            canvas.before:
+                # Color:
+                #     rgb: 1, 1, 1, 1
+                Ellipse:
+                    size: 130, 130
+                    pos: 110, 250
+
+        MDLabel:
+            text: 'Todo App'
+            pos_hint: {'center_x': .5, 'center_y': .2}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: "30sp"
+            # font_name: 'angsana.ttc'
+        MDLabel:
+            text: 'The Complete TODO software application'
+            pos_hint: {'center_x': .5, 'center_y': .15}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: "12sp"
+            # font_name: 'angsana.ttc'
+        MDLabel:
+            text: 'Design by GeetechLab'
+            pos_hint: {'center_x': .5, 'center_y': .12}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: "12sp"
+            # font_name: 'angsana.ttc'
+
+
