@@ -1,0 +1,66 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+
+<LoginScreen>:
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        Image:
+            source: "assets\img\geetechlab.png"
+            size_hint: .26, .26
+            pos_hint: {'center_x': .5, 'center_y': .8}
+        MDLabel:
+            text: 'Proceed with your'
+            font_size: "22sp"
+            pos_hint: {'center_x': .5, 'center_y': .65}
+            color: app.theme_cls.primary_color
+            halign: "center"
+            font_style: 'Caption'
+        MDLabel:
+            text: 'Login'
+            pos_hint: {'center_x': .5, 'center_y': .6}
+            color: app.theme_cls.primary_color
+            halign: "center"
+            font_style: "H4"
+            font_size: "15sp"
+        MDTextField:
+            id: user_email
+            size_hint_x: None
+            width: 300
+            hint_text: "Email"
+            helper_text: "example@mail.com"
+            helper_text_mode: "on_focus"
+            icon_right: "email"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+        MDTextField:
+            id: user_password
+            size_hint_x: None
+            width: 300
+            hint_text: "Password"
+            icon_right: "key-variant"
+            helper_text: "you password ******"
+            helper_text_mode: "on_focus"
+            pos_hint: {'center_x': .5, 'center_y': .38}
+            password: True
+        MDRoundFlatButton:
+            id: auth_user
+            text: "Login"
+            text_color: 58/255, 58/255, 160/255, 1
+            icon_color: app.theme_cls.primary_color
+            pos_hint: {'center_x': .5, 'center_y': .25}
+            on_release: root.authenticate_user()
+        MDTextButton:
+            id: forgot_password
+            text: "Forgot password?"
+            color: app.theme_cls.primary_color
+            pos_hint: {'center_x': .5, 'center_y': .15}
+            font_style: 'Caption'
+        MDTextButton:
+            id: user_signup
+            text: "Signup"
+            color: app.theme_cls.primary_color
+            pos_hint: {'center_x': .5, 'center_y': .1}
+            font_style: 'Caption'
+            on_release:
+                root.manager.transition.direction="left"
+                root.manager.current = 'signup_screen'
+

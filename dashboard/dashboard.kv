@@ -1,0 +1,91 @@
+<DashboardScreen>:
+    MDBoxLayout:
+        md_bg_color: 56/255, 40/255, 81/255, 1
+        orientation: 'vertical'
+        MDBoxLayout:
+            size_hint_y: .25
+            padding: dp(25)
+            MDBoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text: "Hello GeetechLab"
+                    font_style: "H6"
+                    color: 1, 1, 1, 1
+                MDBoxLayout:
+                    adaptive_size: True
+                    spacing: dp(20)
+                    MDLabel:
+                        text: "Home"
+                        text_size: None, None
+                        adaptive_width: True
+                        color: 1, 1, 1, 1
+                    MDIcon:
+                        icon: "home-account"
+                        color: 1, 1, 1, 1
+            MDIconButton:
+                icon: "bell"
+                text_color: 1, 1, 1, 1
+                md_bg_color: 1, 1, 1, 1
+        MDGridLayout:
+            size_hint_y: .75
+            cols: 2
+            padding: [dp(15), dp(15), dp(15), dp(35)]
+            spacing: dp(15)
+            ElementCard:
+                image: "assets\img\geetechlab.png"
+                text: "Calender"
+                subtext: "September, Sunday"
+                items_count: "3 events"
+                on_release: root.show_app_name()
+            ElementCard:
+                image: "assets\img\geetechlab.png"
+                text: "Calender"
+                subtext: "September, Sunday"
+                items_count: "3 events"
+                on_release: root.show_app_name()
+            ElementCard:
+                image: "assets\img\geetechlab.png"
+                text: "Calender"
+                subtext: "September, Sunday"
+                items_count: "3 events"
+                on_release: root.show_app_name()
+            ElementCard:
+                image: "assets\img\geetechlab.png"
+                text: "Calender"
+                subtext: "September, Sunday"
+                items_count: "3 events"
+                on_release: root.show_app_name()
+
+
+<ElementCard@MDCard>:
+    md_bg_color: 69/255, 55/255, 86/255, 1
+    size_hint_y: None
+    padding: dp(15)
+    spacing: dp(15)
+    radius: dp(25)
+    ripple_behaviour:True
+    image:""
+    text:""
+    subtext:""
+    items_count: ""
+    height: dp(175)
+    orientation: 'vertical'
+    # on_press: app.show_app_name()
+    Image:
+        source: root.image
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDLabel:
+            halign: "center"
+            text: root.text
+            font_style: "H6"
+            color: 1, 1, 1, 1
+        MDLabel:
+            halign: "center"
+            font_style: "Caption"
+            text: root.subtext
+            color: 1, 1, 1, 1
+        MDLabel:
+            halign: "center"
+            text: root.items_count
+            color: 1, 1, 1, 1

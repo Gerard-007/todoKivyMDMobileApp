@@ -1,0 +1,52 @@
+<TodoScreen>:
+    date: date
+    # todo_list: todo_list
+    name: "todo_main_display"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            text: "My Tasks"
+            pos_hint: {'center_x': .56, 'center_y': .95}
+            font_size: "35sp"
+        MDLabel:
+            id: date
+            text: ""
+            pos_hint: {'center_x': .565, 'center_y': .89}
+            font_size: "18sp"
+        MDIconButton:
+            icon: "plus"
+            pos_hint: {'center_x': .89, 'center_y': .925}
+            user_font_size: "30sp"
+            md_bg_color: app.theme_cls.primary_color
+            text_color: 1, 1, 1, 1
+            on_release: app.add_todo()
+        # ScrollView:
+        #     MDList:
+        #         TodoCard:
+        #             title:"Hello card"
+        #             body:"Hy please work ooo"
+
+<TodoCard@MDCard>:
+    orientation: "vertical"
+    padding: "8dp"
+    size_hint: None, None
+    size: "280dp", "180dp"
+    title: ""
+    body: ""
+    #pos_hint: {"center_x": .5, "center_y": .5}
+
+    MDLabel:
+        text: root.title
+        theme_text_color: "Secondary"
+        adaptive_height: True
+
+    # MDIconButton:
+    #     icon: "delete"
+        # pos_hint_x: "center_x": .8
+
+    MDSeparator:
+        height: "1dp"
+
+    MDLabel:
+        text: root.body
+

@@ -7,12 +7,10 @@ from kivymd.app import MDApp
 from kivymd.uix.behaviors import FakeRectangularElevationBehavior
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivymd.uix.screen import MDScreen
+from kivymd.toast import toast
+
 
 Window.size = (350, 600)
-
-
-class TodoCard(FakeRectangularElevationBehavior, MDFloatLayout):
-    pass
 
 
 class TodoScreen(MDScreen):
@@ -36,7 +34,12 @@ class TodoApp(MDApp):
         year = str(datetime.datetime.now().year)
         month = str(datetime.datetime.now().strftime("%b"))
         day = str(datetime.datetime.now().strftime("%d"))
-        sm.get_screen("todo_list").date.text=f'{days[wd]}, {day} {month} {year}'
+        sm.get_screen("todo_main_display").date.text=f'{days[wd]}, {day} {month} {year}'
+
+    def add_todo(self):
+        return toast("I will be back")
+        # sm.get_screen("todo_main_display").todo_list.add_widget(TodoCard())
+
 
 if __name__ == "__main__":
     TodoApp().run()

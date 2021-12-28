@@ -1,46 +1,22 @@
-#:import get_color_from_hex kivy.utils.get_color_from_hex
+#: import NoTransition kivy.uix.screenmanager.NoTransition
 
 
-<MyTile@SmartTileWithStar>
-    size_hint_y: None
-    height: "240dp"
+<TodoMain>:
+    id: todo_main
 
+    ScreenManager:
+        # transition: NoTransition()
+        id: main_scr_manager
 
-MDBoxLayout:
-    orientation: "vertical"
-
-    MDToolbar:
-        title: "MDNavigationRail"
-        md_bg_color: rail.md_bg_color
-        left_action_items: [["menu", lambda x: app.rail_open()]]
-
-    MDBoxLayout:
-
-        MDNavigationRail:
-            id: rail
-            md_bg_color: app.theme_cls.primary_color
-            color_normal: get_color_from_hex("#fefefd")
-            color_active: get_color_from_hex("#faea01")
-            use_resizeable: True
-
-            MDNavigationRailItem:
-                icon: "language-cpp"
-                text: "C++"
-
-            MDNavigationRailItem:
-                icon: "language-java"
-                text: "Java"
-
-            MDNavigationRailItem:
-                icon: "language-swift"
-                text: "Swift"
-
-        MDBoxLayout:
-            padding: "24dp"
-
-            ScrollView:
-
-                MDList:
-                    id: box
-                    cols: 3
-                    spacing: "12dp"
+        Screen:
+            id: scrn_splash
+            name: "splash"
+        Screen:
+            id: scrn_login
+            name: "login"
+        Screen:
+            id: scrn_signup
+            name: "signup"
+        Screen:
+            id: scrn_dashboard
+            name: "dashboard"
